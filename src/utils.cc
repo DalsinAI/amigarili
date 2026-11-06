@@ -39,6 +39,16 @@
 
 #include "SimpleIni.h"
 
+#ifdef __amigaos__
+// AmigaOS 3: the settings (li-ri.ini) in the program's drawer, beside the
+// game (SDL_GetPrefPath has no home folder to give here).
+static char *AmigaPrefPath(const char *, const char *)
+{
+    return SDL_strdup("PROGDIR:");
+}
+#define SDL_GetPrefPath AmigaPrefPath
+#endif
+
 /*** Variables globales ***/
 /**************************/
 extern sNewPreference Pref;
@@ -184,15 +194,19 @@ void Utils::GetPath(char *Path)
 }
 #endif
 
-#ifdef __AMIGAOS4__
-// Version AmigaOS4
+#if defined(__AMIGAOS4__) || defined(__amigaos__)
+// Version AmigaOS4 (and AmigaOS 3: the data in the drawer's data/)
 void Utils::GetPath(char *Path)
 {
     char Provi[512];
 
     strcpy(Provi, Path);
 
+#ifdef __AMIGAOS4__
     sprintf(Path, "PROGDIR:%s", Provi);
+#else
+    sprintf(Path, "PROGDIR:data/%s", Provi);
+#endif
     if (Utils::FileExists(Path)) {
         return;
     }
