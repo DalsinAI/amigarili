@@ -1,0 +1,2 @@
+Update to SDL2
+Compilation ok on Android

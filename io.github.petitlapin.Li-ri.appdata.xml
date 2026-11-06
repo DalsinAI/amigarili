@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <id>io.github.petitlapin.Li-ri</id>
+  <name>Li-Ri</name>
+  <summary>Kids game, drive a toy wood engine</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0-or-later</project_license>
+  <description>
+    <p>Li-Ri is a arcade game where you drive a toy wood engine in many levels and you must collect all the coaches for win. You can download it and play indefinitely.</p>
+    <p>It's Free and licensed under the GPL (General Public License). You can play on 'Windows', 'Linux', 'Mac OsX', 'Android'.</p>
+    <ul>
+      <li>19 languages: Arabic, Breton, Chinese, English, Esperanto, French, German, Italian, Japanese, Korean, Portuguese, Russian, Slovak, Spanish, Swedish, Polish, Turkish, Hungarian, Dutch.</li>
+      <li>50 levels in this version.</li>
+      <li>3 beautiful musics and many sound effects.</li>
+    </ul>
+    <p>Li-Ri is a fork of Ri-li.</p>
+  </description>
+  <developer_name>Johnny Jazeix</developer_name>
+  <launchable type="desktop-id">io.github.petitlapin.Li-ri.desktop</launchable>
+  <url type="homepage">https://github.com/petitlapin/Li-Ri</url>
+  <url type="bugtracker">https://github.com/petitlapin/Li-Ri/issues</url>
+  <url type="help">https://github.com/petitlapin/Li-Ri</url>
+  <url type="translate">https://github.com/petitlapin/Li-Ri</url>
+  <provides>
+    <binary>Li-ri</binary>
+  </provides>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Li-ri main menu</caption>
+      <image type="source" width="1920" height="1080">https://raw.githubusercontent.com/petitlapin/Li-Ri/1b9d756abe53fd2be5ac0ad4818a2ac9b436d6ec/fastlane/metadata/android/en-US/images/tenInchScreenshots/01.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>First level</caption>
+      <image type="source" width="1600" height="1040">https://raw.githubusercontent.com/petitlapin/Li-Ri/1b9d756abe53fd2be5ac0ad4818a2ac9b436d6ec/fastlane/metadata/android/en-US/images/tenInchScreenshots/02.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>First level after a few seconds of play</caption>
+      <image type="source" width="1600" height="1040">https://raw.githubusercontent.com/petitlapin/Li-Ri/1b9d756abe53fd2be5ac0ad4818a2ac9b436d6ec/fastlane/metadata/android/en-US/images/tenInchScreenshots/03.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release type="stable" version="3.1.6" date="2025-12-24T00:00:00Z">
+      <description>
+        <ul>
+          <li>Fix Haiku build</li>
+          <li>Add controller support</li>
+          <li>Add support for android tv (not tested)</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="3.1.5" date="2024-05-29T00:00:00Z">
+      <description>
+        <ul>
+          <li>Allow to press any key to start the level as written in the text</li>
+          <li>New colors for icon to differentiate from original Ri-Li</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="3.1.4" date="2024-01-15T00:00:00Z">
+      <description>
+        <ul>
+          <li>Store the maximum level reached per difficulty</li>
+          <li>Fix crash when exiting in the first run "choose language" window</li>
+          <li>Use standard .ini file to store the configuration</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="3.1.3" date="2024-01-13T00:00:00Z">
+      <description>
+        <ul>
+          <li>Fix appdata linter errors</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="3.1.2" date="2024-01-12T00:00:00Z">
+      <description>
+        <ul>
+          <li>Add a rope between 2 wagons</li>
+          <li>Add screenshot feature (key F12)</li>
+          <li>Speed up compilation time (only use what is needed in SDL)</li>
+          <li>Fix crash when exiting on Linux</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="3.1.1" date="2024-01-05T00:00:00Z">
+      <description>
+        <ul>
+          <li>Fix Android start (3.1.0 does not work at all on Android)</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="3.1.0" date="2024-01-01T00:00:00Z">
+      <description>
+        <ul>
+          <li>Fix crash on highscore when waiting too much (memory corruption)</li>
+          <li>Add IME keyboard on Android</li>
+          <li>Handle Back button on Android (same as Escape)</li>
+          <li>Fix audio not playing on Android when leaving the game via the menu and restarting it</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="3.0.1" date="2023-12-19T00:00:00Z">
+      <description>
+        <ul>
+          <li>CMake compilation</li>
+          <li>Github workflow to provide binaries for Linux, Windows and macOS</li>
+          <li>Add missing icon for F-Droid</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="3.0.0" date="2023-11-11T00:00:00Z">
+      <description>
+        <ul>
+          <li>Update to SDL2</li>
+          <li>Compilation ok on Android</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="2.0.1" date="2007-11-01T00:00:00Z">
+      <description>
+        <ul>
+          <li>New Korean language.</li>
+          <li>Russian correction language.</li>
+          <li>Hungarian correction language.</li>
+          <li>License upgrade to 'GNU GPL Version 2 or Version 3'.</li>
+          <li>You can drive the train with the left mouse button.</li>
+          <li>That player who complete the final level be awarded 100</li>
+          <li>points for each remaining life. (Patch by E. Hikory).</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="2.0.0" date="2006-10-16T00:00:00Z">
+      <description>
+        <ul>
+          <li>New Polish language.</li>
+          <li>New Turkish language.</li>
+          <li>New Hungarian language.</li>
+          <li>New Dutch language.</li>
+          <li>Animate when Ri-li is loading.</li>
+          <li>10 news levels. Now 50 levels.</li>
+          <li>Correction of the languages Japanese, German, Italian, Russian.</li>
+          <li>Define AMIGAOS4 flags for Amiga OS4 system.</li>
+          <li>Organization of the data files remade.</li>
+          <li>Ri-Li can be launched without a sound card.</li>
+          <li>Ri-li is limited to 60 fps to relieve the CPU.</li>
+          <li>Ri-li use less ram memory.</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="1.0.4" date="2006-07-19T00:00:00Z">
+      <description>
+        <ul>
+          <li>Addition a help in the game to direct the engine.</li>
+          <li>New Breton language.</li>
+          <li>New Esperanto language.</li>
+          <li>New Italian language.</li>
+          <li>New Portuguese language.</li>
+          <li>New Slovak language.</li>
+          <li>New Swedish language.</li>
+          <li>Correction of the languages German, Japanese, Spanish.</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="1.0.3" date="2006-07-07T00:00:00Z">
+      <description>
+        <ul>
+          <li>Upgrade source, now use $pkgdatadir</li>
+          <li>variable in autoconf for more compatibility with all</li>
+          <li>distributions. Thanks to "B. GANNE" for the sources</li>
+          <li>in his patch for gentoo linux distribution.</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="1.0.2" date="2006-06-29T00:00:00Z"/>
+    <release type="stable" version="1.0.1" date="2006-06-27T00:00:00Z">
+      <description>
+        <ul>
+          <li>Upgrade source, compile on Mac OS X.</li>
+          <li>In the compile * Must define Mac_OSX for Mac OS X system. * Must define POWER_PC for PowerPC CPU. * Must define WINDOWS for Windows system. * Must define LINUX for Linux system.</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="1.0.0" date="2006-06-23T00:00:00Z">
+      <description>
+        <ul>
+          <li>First version for linux and windows</li>
+        </ul>
+      </description>
+    </release>
+    <release type="stable" version="0.0.1" date="2006-06-18T00:00:00Z">
+      <description>
+        <ul>
+          <li>First automake / autoconf</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+  <custom>
+    <value key="KDE::f_droid">https://f-droid.org/en/packages/org.liri.liri/</value>
+  </custom>
+</component>
