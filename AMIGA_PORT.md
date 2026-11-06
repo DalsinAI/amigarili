@@ -11,7 +11,13 @@ Base: ri-li_3.1.6.orig.tar.gz from Debian (upstream's GitHub tag v3.1.6,
 sha256 c1edff0ec4b5d2afddefb12350d6a6e9779888354edfae4fd3073fad86e80bb3).
 Branch team2/rili-amiga.
 
-Status: builds; not yet run in the lab.
+Status: plays in the lab (Instance-45 on GFOpenUp 0.8.19, 6 November
+2026): full screen (its default) at the Workbench's size, the language
+picker, the menu, a Normal game on level 1 (the train running and turning,
+the wagons picked up, the score), the pause menu, Exit Game to the high
+scores, and Quit back to the Shell; li-ri.ini written. The music (MOD and
+XM, through SDL2_mixer.module) and the sounds load without an error; the
+lab's sound is muted, so not heard.
 
 
 What you need
