@@ -14,7 +14,9 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    # Pinned: the checks are tuned for clang-tidy 17 (newer releases add checks that
+    # fail under WarningsAsErrors), and Ubuntu 24.04 carries clang 17 in its own archive.
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v6.0.1
@@ -27,11 +29,7 @@ jobs:
 
       - name: Install clang
         run: |
-          sudo apt-get purge --auto-remove llvm python3-lldb-14 llvm-14
-          wget https://apt.llvm.org/llvm.sh
-          chmod +x llvm.sh
-          sudo ./llvm.sh 17
-          sudo apt-get install -y clang-tidy-17
+          sudo apt-get install -y clang-17 clang-tidy-17
 
       - name: Verify clang-tidy configuration
         run: |
