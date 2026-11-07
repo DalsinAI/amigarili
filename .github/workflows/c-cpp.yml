@@ -74,7 +74,7 @@ jobs:
             - name: Install deps
               run: conan install . --output-folder=${{github.workspace}}/build --build=missing -c tools.cmake.cmaketoolchain:generator=Ninja
             - name: "Configure and build"
-              run: cmake -DCMAKE_TOOLCHAIN_FILE="${{github.workspace}}/build/Release/generators/conan_toolchain.cmake" -DUSE_CONAN=ON -DCMAKE_BUILD_TYPE=Release -S . -B build
+              run: cmake -DCMAKE_TOOLCHAIN_FILE="${{github.workspace}}/build/build/Release/generators/conan_toolchain.cmake" -DUSE_CONAN=ON -DCMAKE_BUILD_TYPE=Release -S . -B build
 
             - name: build
               run: cmake --build build --config Release
