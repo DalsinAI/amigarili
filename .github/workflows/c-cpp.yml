@@ -67,10 +67,14 @@ jobs:
 
             - name: Configure conan
               run: conan profile detect
+            # Ninja for the dependencies: their recipes build with Conan's CMake 3.31,
+            # which has no generator for the runner's Visual Studio 2026 (18).
+            - name: Install Ninja
+              run: pip install ninja
             - name: Install deps
-              run: conan install . --output-folder=${{github.workspace}}/build --build=missing
+              run: conan install . --output-folder=${{github.workspace}}/build --build=missing -c tools.cmake.cmaketoolchain:generator=Ninja
             - name: "Configure and build"
-              run: cmake -DCMAKE_TOOLCHAIN_FILE="${{github.workspace}}/build/build/generators/conan_toolchain.cmake" -DUSE_CONAN=ON -DCMAKE_BUILD_TYPE=Release -S . -B build
+              run: cmake -DCMAKE_TOOLCHAIN_FILE="${{github.workspace}}/build/Release/generators/conan_toolchain.cmake" -DUSE_CONAN=ON -DCMAKE_BUILD_TYPE=Release -S . -B build
 
             - name: build
               run: cmake --build build --config Release
