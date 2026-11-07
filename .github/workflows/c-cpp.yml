@@ -13,7 +13,7 @@ jobs:
             - name: Install Conan
               uses: turtlebrowser/get-conan@main
               with:
-                version: 2.8.1
+                version: 2.34.0
             - name: Configure conan
               run: conan profile detect
             - name: Install deps
@@ -39,7 +39,7 @@ jobs:
             - name: Get Conan
               uses: turtlebrowser/get-conan@main
               with:
-                version: 2.8.1
+                version: 2.34.0
             - name: Configure conan
               run: conan profile detect
             - name: Install deps
@@ -63,21 +63,27 @@ jobs:
             - name: Install Conan
               uses: turtlebrowser/get-conan@main
               with:
-                version: 2.8.1
+                version: 2.34.0
 
             - name: Configure conan
               run: conan profile detect
+            # Ninja for the dependencies: their recipes build with Conan's CMake 3.31,
+            # which has no generator for the runner's Visual Studio 2026 (18).
+            - name: Install Ninja
+              run: pip install ninja
             - name: Install deps
-              run: conan install . --output-folder=${{github.workspace}}/build --build=missing
+              run: conan install . --output-folder=${{github.workspace}}/build --build=missing -c tools.cmake.cmaketoolchain:generator=Ninja
             - name: "Configure and build"
-              run: cmake -DCMAKE_TOOLCHAIN_FILE="${{github.workspace}}/build/build/generators/conan_toolchain.cmake" -DUSE_CONAN=ON -DCMAKE_BUILD_TYPE=Release -S . -B build
+              run: cmake -DCMAKE_TOOLCHAIN_FILE="${{github.workspace}}/build/build/Release/generators/conan_toolchain.cmake" -DUSE_CONAN=ON -DCMAKE_BUILD_TYPE=Release -S . -B build
 
             - name: build
               run: cmake --build build --config Release
+            # From Chocolatey: the install-nsis action's SourceForge mirror download
+            # arrived corrupted ("The file or directory is corrupted and unreadable").
             - name: Install NSIS
-              uses: repolevedavaj/install-nsis@v1.1.0
-              with:
-                nsis-version: "3.10"
+              run: |
+                choco install nsis -y --no-progress
+                echo "C:\Program Files (x86)\NSIS" | Out-File -FilePath $env:GITHUB_PATH -Append
             - name: package
               run: cmake --build build --config Release --target package
             - uses: actions/upload-artifact@v4
