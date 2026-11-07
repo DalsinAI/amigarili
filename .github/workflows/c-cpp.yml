@@ -78,10 +78,12 @@ jobs:
 
             - name: build
               run: cmake --build build --config Release
+            # From Chocolatey: the install-nsis action's SourceForge mirror download
+            # arrived corrupted ("The file or directory is corrupted and unreadable").
             - name: Install NSIS
-              uses: repolevedavaj/install-nsis@v1.1.0
-              with:
-                nsis-version: "3.10"
+              run: |
+                choco install nsis -y --no-progress
+                echo "C:\Program Files (x86)\NSIS" | Out-File -FilePath $env:GITHUB_PATH -Append
             - name: package
               run: cmake --build build --config Release --target package
             - uses: actions/upload-artifact@v4
