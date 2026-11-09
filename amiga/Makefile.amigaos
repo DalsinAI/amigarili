@@ -66,6 +66,7 @@ dist: $(BUILD)/$(PROG) $(ICONS) AMIGA_PORT.md
 	cp data/*.dat data/language.* data/gamecontrollerdb.txt $(OUT)/data/
 	cp -R Sounds $(OUT)/data/Sounds
 	cp AMIGA_PORT.md $(OUT)/ReadMe
+	cp amiga/Controls $(OUT)/Controls
 	cp COPYING $(OUT)/COPYING.txt
 	cp COPYING.Music $(OUT)/COPYING-Music.txt
 	cp amiga/simpleini/LICENCE.txt $(OUT)/SimpleIni-LICENCE.txt
