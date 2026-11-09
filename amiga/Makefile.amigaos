@@ -71,7 +71,6 @@ dist: $(BUILD)/$(PROG) $(ICONS) AMIGA_PORT.md
 	cp amiga/simpleini/LICENCE.txt $(OUT)/SimpleIni-LICENCE.txt
 	cp amiga/icons/Ri-li.info amiga/icons/ReadMe.info $(OUT)/
 	for f in COPYING.txt COPYING-Music.txt SimpleIni-LICENCE.txt; do cp amiga/icons/ReadMe.info $(OUT)/$$f.info; done
-	cp amiga/icons/Folder.info $(OUT)/data.info
 	cp amiga/icons/Ri-li-drawer.info dist/Ri-li.info
 
 -include $(OBJS:.o=.d)
