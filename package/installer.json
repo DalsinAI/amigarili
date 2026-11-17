@@ -1,0 +1,20 @@
+{
+  "name": "Ri-li",
+  "version": "3.1.6-amigaos3",
+  "drawer": "Ri-li",
+  "program": "Ri-li",
+  "cpu": "68040",
+  "fpu": true,
+  "space": 185000000,
+  "modules": [
+    "SDL2.module",
+    "SDL2_mixer.module"
+  ],
+  "keep": [
+    "li-ri.ini",
+    "Screenshots"
+  ],
+  "parent": "Work:Games",
+  "badge": "../amiga/icons/art/rili.png",
+  "script": "Install-Ri-li"
+}

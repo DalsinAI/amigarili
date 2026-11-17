@@ -29,6 +29,19 @@ What you need
 - About 140 MB of disk (each of the 19 languages has its own pictures).
 
 
+Installing
+----------
+
+The archive holds the Ri-li drawer and Install-Ri-li. Unpack it
+anywhere and double-click Install-Ri-li: it checks the CPU, the FPU
+and the GFOpenGPU modules, asks where the game goes (Work:Games by
+default) and copies the drawer there. Installing again over it keeps
+your li-ri.ini and Screenshots.
+package/installer.json is its spec (DalsinAI/amicradle's
+scripts/ports/port_installer.py writes the script and its icon), and
+package/build-amiga.sh builds the drawer and packs the archive.
+
+
 How to play
 -----------
 
